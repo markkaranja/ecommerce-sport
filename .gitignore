@@ -1,0 +1,11 @@
+# Réglages des éditeurs
+.idea/
+.vscode/
+
+# Fichiers créés automatiquement par les systèmes d'exploitation
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Sauvegardes automatiques de PowerAMC
+*.boo
