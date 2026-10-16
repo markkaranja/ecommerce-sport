@@ -9,3 +9,6 @@ desktop.ini
 
 # Sauvegardes automatiques de PowerAMC
 *.boo
+
+# Configuration locale
+config/config.php
