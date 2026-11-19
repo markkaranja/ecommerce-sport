@@ -8,7 +8,10 @@ try {
     $stmt = $pdo->query('SELECT nom, prix FROM `produits`');
     $produits = $stmt->fetchAll();
 } catch (PDOException $e) {
-    exit($e->getMessage());
+    // Détail technique dans le journal du serveur, message neutre pour le visiteur
+    error_log('Lecture des produits impossible : ' . $e->getMessage());
+    http_response_code(500);
+    exit('Une erreur est survenue. Veuillez réessayer plus tard.');
 }
 
 ?>
@@ -28,7 +31,7 @@ try {
     <?php
 
     foreach ($produits as $produit) {
-        echo '<li>' . htmlspecialchars($produit['nom']) . ' - ' . htmlspecialchars($produit['prix']) . ' €</li>' . "\n";
+        echo '<li>' . htmlspecialchars($produit['nom']) . ' - ' . number_format((float) $produit['prix'], 2, ',', ' ') . ' €</li>' . "\n";
     }
 
     ?>
