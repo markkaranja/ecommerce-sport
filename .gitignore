@@ -12,3 +12,5 @@ desktop.ini
 
 # Configuration locale
 config/config.php
+# Dépendances Composer (recréées avec composer install)
+/vendor/
